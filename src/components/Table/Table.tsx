@@ -2,17 +2,16 @@ import React from 'react';
 import { Table as AntTable } from 'antd';
 // import { ColumnsType } from 'antd/es/table';
 import { People } from '../../interfaces/people';
-import { useTable } from 'react-table';
+import { useTable, usePagination } from 'react-table';
 
 import styles from './Table.module.css';
 
-const Table = ({
-  isLoading,
-  data,
-}: {
+interface IPeopleTable {
   isLoading: boolean;
-  data: Array<People>;
-}) => {
+  data: People[];
+}
+
+const Table = ({ isLoading, data }: IPeopleTable) => {
   const columns: any = React.useMemo(
     () => [
       {
@@ -47,14 +46,19 @@ const Table = ({
   //   console.log('params', pagination, filters, sorter, extra);
   // };
 
-  const { rows } = useTable({ columns, data });
+  const { rows } = useTable({ columns, data }, usePagination);
 
   const dataRows = rows.map((row) => ({ ...row.values, key: row.id }));
-
+  
   return (
     <section className={styles.mainTable}>
       <div className="container">
-        <AntTable columns={columns} dataSource={dataRows} loading={isLoading} />
+        <AntTable
+          columns={columns}
+          dataSource={dataRows}
+          loading={isLoading}
+          pagination={{ defaultCurrent: 1, total: dataRows.length }}
+        />
       </div>
     </section>
   );

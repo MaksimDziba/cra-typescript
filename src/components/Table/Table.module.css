@@ -4,3 +4,16 @@
   background: #001529;
   color: white;
 }
+
+.mainTable .ant-pagination {
+  color: white;
+}
+/* .ant-pagination-jump-prev .ant-pagination-item-container .ant-pagination-item-ellipsis, .ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-ellipsis {
+color: white;
+border: 1px solid white;
+border-radius: 3px;
+}
+
+.ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-link-icon {
+  color: #ffffff;
+} */
