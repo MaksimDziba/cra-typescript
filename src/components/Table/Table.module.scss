@@ -4,9 +4,17 @@
   background: #001529;
   color: white;
 }
-
 .mainTable .ant-pagination {
   color: white;
+}
+.buttonWrap {
+  margin-bottom: 16px;
+  button {
+    margin-left: 16px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
 }
 /* .ant-pagination-jump-prev .ant-pagination-item-container .ant-pagination-item-ellipsis, .ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-ellipsis {
 color: white;

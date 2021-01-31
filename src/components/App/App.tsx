@@ -1,17 +1,17 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Layout } from '../Layout';
 import { Table } from '../Table';
 import useAsync from '../../hooks/useAsync';
 import CocktailService from '../../api';
-import { connect, useDispatch, useStore } from 'react-redux';
-import { Dispatch } from 'redux';
+import { useDispatch } from 'react-redux';
+// import { Dispatch } from 'redux';
 import * as actions from '../../store/actions';
-import { ActionsType, IPeopleState } from '../../store/types';
-import { IRootState } from '../../store';
+// import { ActionsType, IPeopleState } from '../../store/types';
+// import { IRootState } from '../../store';
 
 import './App.scss';
 
-const App: FC = (props) => {
+const App: React.FC = () => {
   const [people, setPeople] = useState([]);
   const dispatch = useDispatch();
 
@@ -28,7 +28,7 @@ const App: FC = (props) => {
 
   return (
     <Layout>
-      <Table isLoading={isLoading} data={people} />
+      <Table isLoading={isLoading} dataRow={people} />
     </Layout>
   );
 };
