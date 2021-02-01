@@ -55,7 +55,6 @@ const Table = ({ isLoading, dataRow, callbackRefreshDataTable, callbackTableData
   const handleChangeSpinner = (lap: any): void => {
     if (lap.isFinish) console.log('Finished!!');
     else callbackRefreshDataTable();
-    // else console.log('Running!! Lap:', lap.actualLap);
   };
 
   const columns: any = useMemo(
@@ -145,10 +144,10 @@ const Table = ({ isLoading, dataRow, callbackRefreshDataTable, callbackTableData
         <div className={styles.mainTableHeader}>
           <div className={styles.buttonWrap}>
             <Button type="primary" onClick={handleShowModal}>
-              Open Modal
+              Фильтр
             </Button>
             <Button type="default" onClick={handleResetFilter} className="pl-1">
-              reset filter
+              Сбросить фильтр
             </Button>
           </div>
           <ReactSpinnerTimer

@@ -53,6 +53,10 @@ const ModalTable = ({ showModal, hideModal, filter, callbackFilter }: IModalTabl
     }
   }, [state]);
 
+  useEffect(() => {
+    setState((prev) => ({ ...prev, isChange: false }));
+  }, []);
+
   return (
     <Modal
       isOpen={showModal}
@@ -68,7 +72,7 @@ const ModalTable = ({ showModal, hideModal, filter, callbackFilter }: IModalTabl
           {`Отобразить ${searchPeople} записей`}
         </Button>,
         <Button key="back" onClick={handleSubmitForm} type="default">
-          Закрыть
+          {state.isChange ? 'Применить' : 'Закрыть'}
         </Button>,
       ]}
     >

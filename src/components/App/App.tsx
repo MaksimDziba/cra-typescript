@@ -25,9 +25,9 @@ const App: React.FC = () => {
   const { data, isLoading } = useAsync({
     asyncFn: StarService.getAllStarwarsPeople,
   });
-
+  
   const handleRefreshDataTable = async () => {
-    const { current, pageSize, total } = tableState.pagi;
+    const { current, pageSize } = tableState.pagi;
 
     let countRow = pageSize * current - pageSize;
     let listData = new Array(pageSize).fill({});
