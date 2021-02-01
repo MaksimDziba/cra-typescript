@@ -19,19 +19,21 @@ const App: React.FC = () => {
     },
     data: [] as any,
   });
-  
+
   const dispatch = useDispatch();
 
   const { data, isLoading } = useAsync({
     asyncFn: StarService.getAllStarwarsPeople,
   });
-  
+
   const handleRefreshDataTable = async () => {
     const { current, pageSize } = tableState.pagi;
 
     let countRow = pageSize * current - pageSize;
-    let listData = new Array(pageSize).fill({});
-    listData = listData.map((_, idx) => tableState.data[countRow + idx]);
+    let listData = new Array(pageSize)
+      .fill({})
+      .map((_, idx) => tableState.data[countRow + idx])
+      .filter((item) => item !== undefined); // if more than total clear undefined
 
     const getUpdateRows = await StarService.getTargetPeopleList(listData);
     const copyTableData = tableState.data;

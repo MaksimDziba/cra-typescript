@@ -21,3 +21,10 @@
     text-align: left;
   }
 }
+
+.ant-pagination-jump-prev .ant-pagination-item-container .ant-pagination-item-ellipsis,
+.ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-ellipsis {
+  color: white;
+  border: 1px solid;
+  border-radius: 4px;
+}
