@@ -4,11 +4,16 @@
   background: #001529;
   color: white;
 }
+.mainTableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
 .mainTable .ant-pagination {
   color: white;
 }
 .buttonWrap {
-  margin-bottom: 16px;
   button {
     margin-left: 16px;
     &:first-child {

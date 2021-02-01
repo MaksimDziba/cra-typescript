@@ -1,3 +1,5 @@
+import { People } from "../interfaces/people";
+
 class StarService {
   _apiBase = 'https://swapi.dev/api';
 
@@ -14,6 +16,7 @@ class StarService {
     const res = await this.getResource(`/people/`);
     return res;
   };
+
   public getAllStarwarsPeople = () => {
     let people: Array<object> = [];
     // first page
@@ -43,6 +46,27 @@ class StarService {
       })
       .catch((error) => console.log('Properly handle your exception here', error));
   }
+
+  public getSearch = async (query: string) => {
+    const res = await this.getResource(`/people/?search=${query}`);
+    return res;
+  }
+
+  private _extractId = (item: People): string => {
+    const idRegExp = /\/([0-9]*)\/$/;
+    return item.url.match(idRegExp)![1];
+  };
+
+  public getTargetPeopleList = async(list: Array<People>) => {
+    const promises = [];
+
+    for (let i = 0; i < list.length; i++) {
+      const id = this._extractId(list[i]);
+      promises.push(this.getResource(`/people/${id}/`));
+    }
+    return Promise.all(promises);
+  }
+
 }
 
 export default new StarService();

@@ -11,3 +11,13 @@
 .ant-layout-content {
   flex: 1 0 auto;
 }
+
+.ant-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  .modalFooter_display-result {
+    flex: 1 1 auto;
+    text-align: left;
+  }
+}

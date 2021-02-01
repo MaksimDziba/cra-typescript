@@ -9981,6 +9981,11 @@ react-scripts@4.0.1:
   optionalDependencies:
     fsevents "^2.1.3"
 
+react-spinner-timer@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-spinner-timer/-/react-spinner-timer-1.0.5.tgz#6e7ca76bd4dfe768b8d83f1159289023a9187167"
+  integrity sha512-Qv0+qMEtu/LqkouUrgc4kLWE8PHbSv8aV6VfLJ6ixw0O12xj/tu0xObXJz+DOieGRcgB7dRjgHKu20TYrDghuw==
+
 react-table@^7.6.3:
   version "7.6.3"
   resolved "https://registry.yarnpkg.com/react-table/-/react-table-7.6.3.tgz#76434392b3f62344bdb704f5b227c2f29c1ffb14"

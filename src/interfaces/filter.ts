@@ -1,3 +1,5 @@
+import { IPagi } from './pagi';
+
 export interface ITableFilter {
   input: string;
   checkbox: boolean;
@@ -6,4 +8,6 @@ export interface ITableFilter {
     columnKey: string;
     order: string;
   };
+  isChange: boolean;
+  pagi: IPagi;
 }
