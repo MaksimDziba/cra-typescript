@@ -118,7 +118,7 @@ const Table = ({ isLoading, dataRow, callbackRefreshDataTable, callbackTableData
     // filter by name
     if (filter.input.trim() !== '') {
       const newDataRow: People[] = initData.filter(
-        (people: People) => people.name.toLowerCase().indexOf(filter.input) > -1,
+        (people: People) => people.name.toLowerCase().indexOf(filter.input.toLowerCase()) > -1,
       );
       setDataRow(newDataRow);
     } else {
